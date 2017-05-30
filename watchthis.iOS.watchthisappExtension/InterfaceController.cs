@@ -2,11 +2,28 @@
 
 using WatchKit;
 using Foundation;
+using System.IO;
 
 namespace watchthis.iOS.watchthisappExtension
 {
     public partial class InterfaceController : WKInterfaceController
     {
+        partial void BtnRecord_ActivatedAsync()
+        {
+			var suggest = new string[0];
+			NSUrl url;
+			string fileName = string.Format("Myfile{0}.wav", DateTime.Now.ToString("yyyyMMddHHmmss"));
+			string audioFilePath = Path.Combine(Path.GetTempPath(), fileName);
+
+			Console.WriteLine("Audio File Path: " + audioFilePath);
+
+			url = NSUrl.FromFilename(audioFilePath);
+
+			 PresentAudioRecorderControllerAsync(url, WatchKit.WKAudioRecorderPreset.NarrowBandSpeech, null);
+        }
+
+
+
         partial void BtnDictate_Activated()
         {
 			var suggest = new string[0];
@@ -15,16 +32,13 @@ namespace watchthis.iOS.watchthisappExtension
 				// action when the "text input" is complete
 				if (result != null && result.Count > 0)
 				{
-					var enteredText = result.GetItem<NSObject>(0).ToString();
+                    var enteredText = result.GetItem<NSObject>(0).ToString();
                     lblDictatedText.SetText(enteredText);
 					Console.WriteLine(enteredText);
 				}
 			});        }
 
-        partial void BtnClear_Activated()
-        {
-			lblDictatedText.SetText("");
-        }
+   
 
         protected InterfaceController(IntPtr handle) : base(handle)
         {

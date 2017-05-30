@@ -15,34 +15,34 @@ namespace watchthis.iOS.watchthisappExtension
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        WatchKit.WKInterfaceButton btnClear { get; set; }
+        WatchKit.WKInterfaceButton btnDictate { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        WatchKit.WKInterfaceButton btnDictate { get; set; }
+        WatchKit.WKInterfaceButton btnRecord { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         WatchKit.WKInterfaceLabel lblDictatedText { get; set; }
 
-        [Action ("BtnClear_Activated")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void BtnClear_Activated ();
-
         [Action ("BtnDictate_Activated")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void BtnDictate_Activated ();
 
+        [Action ("BtnRecord_Activated")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void BtnRecord_ActivatedAsync ();
+
         void ReleaseDesignerOutlets ()
         {
-            if (btnClear != null) {
-                btnClear.Dispose ();
-                btnClear = null;
-            }
-
             if (btnDictate != null) {
                 btnDictate.Dispose ();
                 btnDictate = null;
+            }
+
+            if (btnRecord != null) {
+                btnRecord.Dispose ();
+                btnRecord = null;
             }
 
             if (lblDictatedText != null) {

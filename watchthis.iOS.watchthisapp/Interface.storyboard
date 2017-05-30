@@ -11,7 +11,7 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
-                        <button width="1" alignment="left" title="Dictate" id="0">
+                        <button width="1" alignment="left" id="0" title="Siri to Text">
                             <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                             <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
                             <connections>
@@ -19,18 +19,18 @@
                             </connections>
                         </button>
                         <label alignment="left" id="1" width="134" height="79" numberOfLines="6"/>
-                        <button width="1" alignment="left" title="Clear" id="2">
-                            <color key="backgroundColor" colorSpace="calibratedRGB" red="0.49803921568627452" green="0" blue="0.49803921568627452" alpha="1"/>
+                        <button width="1" alignment="left" title="Record Voice" id="2">
+                            <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0" blue="0" alpha="1"/>
                             <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                             <connections>
-                                <action selector="BtnClear_Activated" destination="AgC-eL-Hgc" id="4"/>
+                                <action selector="BtnRecord_Activated" destination="AgC-eL-Hgc" id="5"/>
                             </connections>
                         </button>
                     </items>
                     <connections>
                         <outlet property="btnDictate" destination="0" id="name-outlet-0"/>
                         <outlet property="lblDictatedText" destination="1" id="name-outlet-1"/>
-                        <outlet property="btnClear" destination="2" id="name-outlet-2"/>
+                        <outlet property="btnRecord" destination="2" id="name-outlet-2"/>
                     </connections>
                 </controller>
             </objects>
